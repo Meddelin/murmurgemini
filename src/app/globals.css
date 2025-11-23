@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Custom Colors */
+  --color-orange-primary: var(--color-orange-primary);
+  --color-orange-dark: var(--color-orange-dark);
+  --color-orange-light: var(--color-orange-light);
+  --color-soft-peach: var(--color-soft-peach);
+  --color-success-green: var(--color-success-green);
+  --color-error-red: var(--color-error-red);
+  --color-warning-amber: var(--color-warning-amber);
+  --color-info-blue: var(--color-info-blue);
+}
+
+:root {
+  --background: #F3F4F6; /* Slightly darker background for cards to pop */
+  --foreground: #242015;
+
+  --card: #FFFFFF;
+  --card-foreground: #242015;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #242015;
+
+  --primary: #FFB534;
+  --primary-foreground: #242015;
+
+  --secondary: #FFF7E9;
+  --secondary-foreground: #E67326;
+
+  --muted: #F9FAFB;
+  --muted-foreground: #6B7280;
+
+  --accent: #FFB27A;
+  --accent-foreground: #242015;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #FFB534;
+
+  --radius: 0.75rem; /* More rounded */
+
+  /* Custom PDF Colors */
+  --color-orange-primary: #FFB534;
+  --color-orange-dark: #E67326;
+  --color-orange-light: #FFB27A;
+  --color-soft-peach: #FFF7E9;
+  --color-success-green: #4CAF50;
+  --color-error-red: #F44336;
+  --color-warning-amber: #FF9800;
+  --color-info-blue: #2196F3;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: radial-gradient(#FFB534 0.5px, transparent 0.5px), radial-gradient(#FFB534 0.5px, #F3F4F6 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    background-attachment: fixed;
+    background-color: #F9FAFB; /* Fallback / Blend */
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@utility island-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-lg shadow-gray-200/50;
+}
